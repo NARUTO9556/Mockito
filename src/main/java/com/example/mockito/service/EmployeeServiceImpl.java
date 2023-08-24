@@ -15,11 +15,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     public EmployeeServiceImpl() {
         employeeList.add(new Employee("Иван", "Иванов", 1000.0, 1));
-        employeeList.add(new Employee("Иван1", "Иванов1", 999.9, 1));
-        employeeList.add(new Employee("Иван2", "Иванов2", 8.50, 2));
-        employeeList.add(new Employee("Пётр", "Петров", 8.50, 2));
-        employeeList.add(new Employee("Илья", "Ильин", 777.50, 3));
-        employeeList.add(new Employee("Илья1", "Ильин1", 88.8, 3));
+        employeeList.add(new Employee("Иван1", "Иванов1", 999.9, 2));
+        employeeList.add(new Employee("Иван2", "Иванов2", 8.50, 3));
+        employeeList.add(new Employee("Пётр", "Петров", 8.50, 3));
+        employeeList.add(new Employee("Илья", "Ильин", 777.50, 2));
+        employeeList.add(new Employee("Илья1", "Ильин1", 88.8, 1));
     }
     @Override
     public Employee add(String firstName, String lastName, double salary, int departmentId) {

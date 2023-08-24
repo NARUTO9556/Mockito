@@ -38,6 +38,8 @@ public class DepartmentController {
     public Employee getEmployeeWithMinSalary(@PathVariable("id") Integer departmentId) {
         return departmentService.getEmployeeWithMinSalary(departmentId);
     }
-//    @GetMapping("/employee")
-
+    @GetMapping("/employee")
+    public List<Employee> getEmployeeGroupedByDepartment() {
+        return departmentService.getEmployeeGroupedByDepartment();
+    }
 }

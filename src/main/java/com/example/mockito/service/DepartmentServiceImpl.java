@@ -5,6 +5,7 @@ import com.example.mockito.model.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.*;
 
@@ -51,7 +52,9 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public Map<Integer, List<Employee>> getEmployeeGroupedByDepartment() {
-        return null;
+    public List<Employee> getEmployeeGroupedByDepartment() {
+        return employeeService.findAll().stream()
+                .sorted(Comparator.comparingInt(Employee::getDepartmentId))
+                .collect(Collectors.toList());
     }
 }
