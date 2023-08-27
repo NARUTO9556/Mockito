@@ -11,5 +11,4 @@ public interface DepartmentService {
     Employee getEmployeeWithMaxSalary(Integer department);
     Employee getEmployeeWithMinSalary(Integer department);
 
-    List<Employee> getEmployeeGroupedByDepartment();
 }

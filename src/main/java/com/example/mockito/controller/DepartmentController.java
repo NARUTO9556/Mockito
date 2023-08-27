@@ -39,7 +39,7 @@ public class DepartmentController {
         return departmentService.getEmployeeWithMinSalary(departmentId);
     }
     @GetMapping("/employee")
-    public List<Employee> getEmployeeGroupedByDepartment() {
-        return departmentService.getEmployeeGroupedByDepartment();
+    public Map<Integer, List<Employee>> getEmployeeGroupedByDepartment(@RequestParam(required = false) Integer departmentId) {
+        return departmentService.getEmployeeByDepartment(departmentId);
     }
 }

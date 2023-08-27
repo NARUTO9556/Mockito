@@ -5,7 +5,6 @@ import com.example.mockito.model.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.*;
 
@@ -13,7 +12,7 @@ import static java.util.stream.Collectors.*;
 public class DepartmentServiceImpl implements DepartmentService {
     private final EmployeeService employeeService;
 
-    public DepartmentServiceImpl(EmployeeServiceImpl employeeService) {
+    public DepartmentServiceImpl(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
@@ -49,12 +48,5 @@ public class DepartmentServiceImpl implements DepartmentService {
                 .filter(employee -> employee.getDepartmentId() == departmentId)
                 .min(Comparator.comparing(Employee::getSalary))
                 .orElseThrow(() -> new EmployeeNotFoundException("Сотрудник с минимальной зарплатой не найден"));
-    }
-
-    @Override
-    public List<Employee> getEmployeeGroupedByDepartment() {
-        return employeeService.findAll().stream()
-                .sorted(Comparator.comparingInt(Employee::getDepartmentId))
-                .collect(Collectors.toList());
     }
 }
